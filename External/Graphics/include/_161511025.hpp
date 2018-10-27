@@ -4,8 +4,6 @@
 #include <cmath>
 #include "graphics.h"
 
-#define PI 3.14159265359
-
 class Point
 {
 	public:
@@ -27,13 +25,13 @@ class Line
 		Point point2;
 	
 	public:
-		Line(int x1, int y1, int x2, int y2)
+		Line(int x1, int y1, int x2, int y2);
 		void draw(int lineColor = WHITE);
 		void translation(int xt = 0, int yt = 0);
 		void reflection(float gradien = 1.0, float c = 0);
 		void rotation(int a = 0, int b = 0, int angle = 0);
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
-}
+};
 
 class Circle
 {
