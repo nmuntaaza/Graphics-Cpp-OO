@@ -9,10 +9,13 @@ class Point
 	public:
 		int x;
 		int y;
+		float gradien;
+		float c;
 		
 	public:
 		Point(int x = 0, int y = 0);
 		void translation(int xt = 0, int yt = 0);
+		void reflection(float gradien = 1.0, float c = 0);
 };
 
 class Circle
@@ -24,8 +27,9 @@ class Circle
 		
 	public:
 		Circle(int x = 0, int y = 0, float radius = 50.0, int color = GREEN);
-		void draw();
+		void draw(int lineColor = WHITE);
 		void translation(int xt = 0, int yt = 0);
+		void reflection(float gradien = 1.0, float c = 0);
 		float area();
 };
 
