@@ -16,8 +16,20 @@ void Point::translation(int xt, int yt)
 void Point::reflection(float gradien, float c)
 {
 	float d = (this->x + (this->y - c) * gradien) / (1 + pow(gradien, 2));
-	this->x = float(2 * d - x);
-	this->y = float(2 * d * gradien - y + 2 * c);
+	this->x = float(2 * d - this->x);
+	this->y = float(2 * d * gradien - this->y + 2 * c);
+}
+
+void Point::rotation(int a, int b, int angle)
+{
+	this->x = (cos((angle * PI) / 180) * (this->x - a)) + (-sin((angle * PI) / 180) * (this->y - b)) + a;
+	this->y = (sin((angle * PI) / 180) * (this->x - a)) + (cos((angle * PI) / 180) * (this->y - b)) + b;
+}
+
+void Point::dilatation(int a, int b, float scale)
+{
+	this->x = (scale * (this->x - a)) + a;
+	this->y = (scale * (this->y - b)) + b;
 }
 
 // Circle
@@ -51,6 +63,17 @@ void Circle::translation(int xt, int yt)
 void Circle::reflection(float gradien, float c)
 {
 	point.reflection(gradien, c);
+}
+
+void Circle::rotation(int a, int b, int angle)
+{
+	point.rotation(a, b, angle);
+}
+
+void Circle::dilatation(int a, int b, float scale)
+{
+	point.dilatation(a, b, scale);
+	this->radius = this->radius * scale;
 }
 
 float Circle::area()

@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 	initwindow(800, 800, "Graphics");
 	Circle c1(300, 100, 50);
 	c1.draw(BLUE);
-	c1.reflection(1.0, -70.0);
+	c1.dilatation(300, 100, 1.5);
 	c1.draw(RED);
 	
 	system("pause");
