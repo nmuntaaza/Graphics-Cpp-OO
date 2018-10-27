@@ -1,6 +1,7 @@
 #include "_161511025.hpp"
 
 // Point
+
 Point::Point(int x, int y)
 {
 	this->x = x;
@@ -32,7 +33,12 @@ void Point::dilatation(int a, int b, float scale)
 	this->y = (scale * (this->y - b)) + b;
 }
 
+// Line
+
+
+
 // Circle
+
 Circle::Circle(int x, int y, float radius, int color)
 {
 	this->point.x 	= x;
