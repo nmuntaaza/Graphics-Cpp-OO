@@ -263,3 +263,55 @@ void Square::dilatation(int a, int b, float scale)
 	this->point1.dilatation(a, b, scale);
 	this->point2.dilatation(a, b, scale);
 }
+
+Triangle::Triangle(int x1, int y1, int x2, int y2, int x3, int y3)
+{
+	this->point1.x = x1;
+	this->point1.y = y1;
+	this->point2.x = x2;
+	this->point2.y = y2;
+	this->point3.x = x3;
+	this->point3.y = y3;
+}
+
+void Triangle::draw(int lineColor)
+{
+	Line line;
+	
+	line = Line(this->point1.x, this->point1.y, this->point2.x, this->point2.y);
+	line.draw(lineColor);
+	
+	line = Line(this->point2.x, this->point2.y, this->point3.x, this->point3.y);
+	line.draw(lineColor);
+	
+	line = Line(this->point3.x, this->point3.y, this->point1.x, this->point1.y);
+	line.draw(lineColor);
+}
+
+void Triangle::translation(int xt, int yt)
+{
+	this->point1.translation(xt, yt);
+	this->point2.translation(xt, yt);
+	this->point3.translation(xt, yt);
+}
+
+void Triangle::reflection(float gradien, float c)
+{
+	this->point1.reflection(gradien, c);
+	this->point2.reflection(gradien, c);
+	this->point3.reflection(gradien, c);
+}
+
+void Triangle::rotation(int a, int b, int angle)
+{
+	this->point1.rotation(a, b, angle);
+	this->point2.rotation(a, b, angle);
+	this->point3.rotation(a, b, angle);
+}
+
+void Triangle::dilatation(int a, int b, float scale)
+{
+	this->point1.dilatation(a, b, scale);
+	this->point2.dilatation(a, b, scale);
+	this->point3.dilatation(a, b, scale);
+}

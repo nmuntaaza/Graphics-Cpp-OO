@@ -92,4 +92,20 @@ class Square
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
 };
 
+class Triangle
+{
+	public:
+		Point point1;
+		Point point2;
+		Point point3;
+		
+	public:
+		Triangle(int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, int x3 = 0, int y3 = 0);
+		void draw(int lineColor = WHITE);
+		void translation(int xt = 0, int yt = 0);
+		void reflection(float gradien = 1.0, float c = 0);
+		void rotation(int a = 0, int b = 0, int angle = 0);
+		void dilatation(int a = 0, int b = 0, float scale = 0.5);
+};
+
 #endif
