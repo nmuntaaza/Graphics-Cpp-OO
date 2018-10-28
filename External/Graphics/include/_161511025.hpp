@@ -60,6 +60,10 @@ class Ellips3
 	public:
 		Ellips3(int x = 0, int y = 0, float radiusX = 50.0, float radiusY = 50.0);
 		void draw(int lineColor = WHITE);
+		void translation(int xt = 0, int yt = 0);
+		void reflection(float gradien = 1.0, float c = 0);
+		void rotation(int a = 0, int b = 0, int angle = 0);
+		void dilatation(int a = 0, int b = 0, float scale = 0.5);
 };
 
 #endif

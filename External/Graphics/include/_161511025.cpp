@@ -193,3 +193,13 @@ void Ellips3::draw(int lineColor)
     }
   }	
 }
+
+void Ellips3::translation(int xt, int yt)
+{
+	this->point.translation(xt, yt);
+}
+
+void Ellips3::reflection(float gradien, float c)
+{
+	this->point.reflection(gradien, c);
+}
