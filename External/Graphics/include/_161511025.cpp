@@ -239,3 +239,27 @@ void Square::draw(int lineColor)
 	line = Line(this->point1.x, this->point2.y, this->point2.x, this->point2.y);
 	line.draw(lineColor);
 }
+
+void Square::translation(int xt, int yt)
+{
+	this->point1.translation(xt, yt);
+	this->point2.translation(xt, yt);
+}
+
+void Square::reflection(float gradien, float c)
+{
+	this->point1.reflection(gradien, c);
+	this->point2.reflection(gradien, c);
+}
+
+void Square::rotation(int a, int b, int angle)
+{
+	this->point1.rotation(a, b, angle);
+	this->point2.rotation(a, b, angle);
+}
+
+void Square::dilatation(int a, int b, float scale)
+{
+	this->point1.dilatation(a, b, scale);
+	this->point2.dilatation(a, b, scale);
+}

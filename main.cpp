@@ -4,14 +4,12 @@
 int main(int argc, char* argv[]) 
 {
 	initwindow(800, 800, "Graphics");
-	Ellips3 ellipse(300, 100, 50, 50);
-	ellipse.draw(YELLOW);
-	ellipse.reflection(1.0, -50.0);
-	ellipse.draw(GREEN);
-	ellipse.dilatation(ellipse.point.x, ellipse.point.y, 3.0);
-	ellipse.draw(RED);
-	Square square(500, 500, 600, 600);
+	Square square(300, 300, 350, 350);
 	square.draw(BLUE);
+	square.translation(-100, 0);
+	square.draw(RED);
+	square.dilatation((square.point1.x + square.point2.x)/2, (square.point1.y + square.point2.y)/2, 2.0);
+	square.draw(GREEN);
 	
 	system("pause");
 	return 0;

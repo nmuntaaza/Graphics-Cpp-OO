@@ -1,3 +1,14 @@
+// The OO Graphics H library, Version 1.0, November - , 2018
+// Writen by:
+// 			Naufal Muntaaza Waliy Hibatullah
+
+// ---------------------------------------------------------
+//												Notes
+// ---------------------------------------------------------
+// * This library forked from winbgim library for education purpose only
+// * Thanks
+// ---------------------------------------------------------
+
 #ifndef _161511025_H_INCLUDED
 #define _161511025_H_INCLUDED
 
