@@ -43,6 +43,7 @@ class Line
 		void reflection(float gradien = 1.0, float c = 0);
 		void rotation(int a = 0, int b = 0, int angle = 0);
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
+		Point origin();
 };
 
 class Circle
@@ -59,6 +60,7 @@ class Circle
 		void reflection(float gradien = 1.0, float c = 0);
 		void rotation(int a = 0, int b = 0, int angle = 0);
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
+		Point origin();
 		float area();
 };
 
@@ -76,6 +78,7 @@ class Ellips3
 		void reflection(float gradien = 1.0, float c = 0);
 		void rotation(int a = 0, int b = 0, int angle = 0);
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
+		Point origin();
 };
 
 class Square
@@ -91,6 +94,7 @@ class Square
 		void reflection(float gradien = 1.0, float c = 0);
 		void rotation(int a = 0, int b = 0, int angle = 0);
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
+		Point origin();
 };
 
 class Triangle

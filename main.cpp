@@ -8,12 +8,12 @@ int main(int argc, char* argv[])
 	square.draw(BLUE);
 	square.translation(-100, 0);
 	square.draw(RED);
-	square.dilatation((square.point1.x + square.point2.x)/2, (square.point1.y + square.point2.y)/2, 2.0);
+	square.dilatation(square.origin().x, square.origin().y, 2.0);
 	square.draw(GREEN);
 	
 	Triangle tri(100, 100, 200, 200, 0, 150);
 	tri.draw(YELLOW);
-	tri.dilatation((tri.point1.x + tri.point2.x +  tri.point3.x)/3, (tri.point1.y + tri.point2.y +  tri.point3.y)/3, 0.5);
+	tri.dilatation(tri.origin().x, tri.origin().y, 0.5);
 	tri.draw(RED);
 	
 	system("pause");

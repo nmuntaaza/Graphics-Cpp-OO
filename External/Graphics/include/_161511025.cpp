@@ -96,6 +96,16 @@ void Line::dilatation(int a, int b, float scale)
 	this->point2.dilatation(a, b, scale);
 }
 
+Point Line::origin()
+{
+	Point origin;
+	
+	origin.x = (this->point1.x + this->point2.x) / 2;
+	origin.y = (this->point1.y + this->point2.y) / 2;
+	
+	return origin;
+}
+
 // Circle
 
 Circle::Circle(int x, int y, float radius, int color)
@@ -144,6 +154,16 @@ void Circle::dilatation(int a, int b, float scale)
 float Circle::area()
 {
 	return pow(this->radius, 2) * 3.14;
+}
+
+Point Circle::origin()
+{
+	Point origin;
+	
+	origin.x = this->point.x;
+	origin.y = this->point.y;
+	
+	return origin;
 }
 
 // Ellipse
@@ -213,6 +233,16 @@ void Ellips3::dilatation(int a, int b, float scale)
 	this->radiusY = this->radiusY * scale;
 }
 
+Point Ellips3::origin()
+{
+	Point origin;
+	
+	origin.x = this->point.x;
+	origin.y = this->point.y;
+	
+	return origin;
+}
+
 // Square
 
 Square::Square(int x1, int y1, int x2, int y2)
@@ -263,6 +293,18 @@ void Square::dilatation(int a, int b, float scale)
 	this->point1.dilatation(a, b, scale);
 	this->point2.dilatation(a, b, scale);
 }
+
+Point Square::origin()
+{
+	Point origin;
+	
+	origin.x = (this->point1.x + this->point2.x) / 2;
+	origin.y = (this->point1.y + this->point2.y) / 2;
+	
+	return origin;
+}
+
+// Triangle
 
 Triangle::Triangle(int x1, int y1, int x2, int y2, int x3, int y3)
 {
@@ -320,6 +362,8 @@ Point Triangle::origin()
 {
 	Point origin;
 	
-	origin.x = (this->point1.x + this->point2.x + this->point3.x);
-	origin.y = (this->point1.y + this->point2.y + this->point3.y);
+	origin.x = (this->point1.x + this->point2.x + this->point3.x) / 3;
+	origin.y = (this->point1.y + this->point2.y + this->point3.y) / 3;
+	
+	return origin;
 }
