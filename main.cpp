@@ -8,6 +8,8 @@ int main(int argc, char* argv[])
 	ellipse.draw(YELLOW);
 	ellipse.reflection(1.0, -50.0);
 	ellipse.draw(GREEN);
+	ellipse.dilatation(ellipse.point.x, ellipse.point.y, 3.0);
+	ellipse.draw(RED);
 	
 	system("pause");
 	return 0;

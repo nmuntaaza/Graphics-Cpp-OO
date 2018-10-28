@@ -203,3 +203,10 @@ void Ellips3::reflection(float gradien, float c)
 {
 	this->point.reflection(gradien, c);
 }
+
+void Ellips3::dilatation(int a, int b, float scale)
+{
+	this->point.dilatation(a, b, scale);
+	this->radiusX = this->radiusX * scale;
+	this->radiusY = this->radiusY * scale;
+}
