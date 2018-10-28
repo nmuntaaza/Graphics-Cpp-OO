@@ -10,6 +10,8 @@ int main(int argc, char* argv[])
 	ellipse.draw(GREEN);
 	ellipse.dilatation(ellipse.point.x, ellipse.point.y, 3.0);
 	ellipse.draw(RED);
+	Square square(500, 500, 600, 600);
+	square.draw(BLUE);
 	
 	system("pause");
 	return 0;

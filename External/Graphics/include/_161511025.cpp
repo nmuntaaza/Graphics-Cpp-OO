@@ -146,6 +146,8 @@ float Circle::area()
 	return pow(this->radius, 2) * 3.14;
 }
 
+// Ellipse
+
 Ellips3::Ellips3(int x, int y, float radiusX, float radiusY)
 {
 	this->point.x = x;
@@ -209,4 +211,31 @@ void Ellips3::dilatation(int a, int b, float scale)
 	this->point.dilatation(a, b, scale);
 	this->radiusX = this->radiusX * scale;
 	this->radiusY = this->radiusY * scale;
+}
+
+// Square
+
+Square::Square(int x1, int y1, int x2, int y2)
+{
+	this->point1.x = x1;
+	this->point1.y = y1;
+	this->point2.x = x2;
+	this->point2.y = y2;
+}
+
+void Square::draw(int lineColor)
+{
+	Line line;
+	
+	line = Line(this->point1.x, this->point1.y, this->point2.x, this->point1.y);
+	line.draw(lineColor);
+	
+	line = Line(this->point1.x, this->point1.y, this->point1.x, this->point2.y);
+	line.draw(lineColor);
+	
+	line = Line(this->point2.x, this->point1.y, this->point2.x, this->point2.y);
+	line.draw(lineColor);
+	
+	line = Line(this->point1.x, this->point2.y, this->point2.x, this->point2.y);
+	line.draw(lineColor);
 }
