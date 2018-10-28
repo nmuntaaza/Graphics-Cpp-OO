@@ -25,7 +25,7 @@ class Line
 		Point point2;
 	
 	public:
-		Line(int x1, int y1, int x2, int y2);
+		Line(int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0);
 		void draw(int lineColor = WHITE);
 		void translation(int xt = 0, int yt = 0);
 		void reflection(float gradien = 1.0, float c = 0);
@@ -48,6 +48,18 @@ class Circle
 		void rotation(int a = 0, int b = 0, int angle = 0);
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
 		float area();
+};
+
+class Ellips3
+{
+	public:
+		Point point;
+		float radiusX;
+		float radiusY;
+		
+	public:
+		Ellips3(int x = 0, int y = 0, float radiusX = 50.0, float radiusY = 50.0);
+		void draw(int lineColor = WHITE);
 };
 
 #endif

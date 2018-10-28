@@ -74,26 +74,26 @@ void Line::draw(int lineColor)
 
 void Line::translation(int xt, int yt)
 {
-	point1.translation(xt, yt);
-	point2.translation(xt, yt);
+	this->point1.translation(xt, yt);
+	this->point2.translation(xt, yt);
 }
 
 void Line::reflection(float gradien, float c)
 {
-	point1.reflection(gradien, c);
-	point2.reflection(gradien, c);
+	this->point1.reflection(gradien, c);
+	this->point2.reflection(gradien, c);
 }
 
 void Line::rotation(int a, int b, int angle)
 {
-	point1.rotation(a, b, angle);
-	point2.rotation(a, b, angle);
+	this->point1.rotation(a, b, angle);
+	this->point2.rotation(a, b, angle);
 }
 
 void Line::dilatation(int a, int b, float scale)
 {
-	point1.dilatation(a, b, scale);
-	point2.dilatation(a, b, scale);
+	this->point1.dilatation(a, b, scale);
+	this->point2.dilatation(a, b, scale);
 }
 
 // Circle
@@ -122,12 +122,12 @@ void Circle::draw(int lineColor)
 
 void Circle::translation(int xt, int yt)
 {
-	point.translation(xt, yt);
+	this->point.translation(xt, yt);
 }
 
 void Circle::reflection(float gradien, float c)
 {
-	point.reflection(gradien, c);
+	this->point.reflection(gradien, c);
 }
 
 void Circle::rotation(int a, int b, int angle)
@@ -137,11 +137,59 @@ void Circle::rotation(int a, int b, int angle)
 
 void Circle::dilatation(int a, int b, float scale)
 {
-	point.dilatation(a, b, scale);
+	this->point.dilatation(a, b, scale);
 	this->radius = this->radius * scale;
 }
 
 float Circle::area()
 {
 	return pow(this->radius, 2) * 3.14;
+}
+
+Ellips3::Ellips3(int x, int y, float radiusX, float radiusY)
+{
+	this->point.x = x;
+	this->point.y = y;
+	this->radiusX = radiusX;
+	this->radiusY = radiusY;
+}
+
+void Ellips3::draw(int lineColor)
+{
+	int x = 0, y = this->radiusY;
+  int p = (this->radiusY * this->radiusY) - (this->radiusX * this->radiusX * this->radiusY) + ((this->radiusX * this->radiusX) / 4);
+
+  while((2 * x * this->radiusY * this->radiusY) < (2 * y * this->radiusX * this->radiusX)) {
+	  putpixel(this->point.x + x, this->point.y - y, lineColor);
+	  putpixel(this->point.x - x, this->point.y + y, lineColor);
+	  putpixel(this->point.x + x, this->point.y + y, lineColor);
+	  putpixel(this->point.x - x, this->point.y - y, lineColor);
+	
+	  if(p < 0) {
+	    x = x + 1;
+	    p = p + (2 * this->radiusY * this->radiusY * x) + (this->radiusY * this->radiusY);
+	  } else {
+	    x = x + 1;
+	    y = y - 1;
+	    p = p + (2 * this->radiusY * this->radiusY * x + this->radiusY * this->radiusY)-(2 * this->radiusX * this->radiusX * y);
+	  }
+  }
+
+  p = ((float)x + 0.5) * ((float)x + 0.5) * this->radiusY * this->radiusY + (y - 1) * (y - 1) * this->radiusX * this->radiusX - this->radiusX * this->radiusX *this->radiusY *this->radiusY;
+
+  while(y >= 0) {
+    putpixel(this->point.x + x, this->point.y - y, lineColor);
+    putpixel(this->point.x - x, this->point.y + y, lineColor);
+    putpixel(this->point.x + x, this->point.y + y, lineColor);
+    putpixel(this->point.x - x, this->point.y - y, lineColor);
+
+    if(p > 0) {
+      y = y - 1;
+      p = p - (2 * this->radiusX * this->radiusX * y) + (this->radiusX * this->radiusX);
+    } else {
+      y = y - 1;
+      x = x + 1;
+      p = p + (2 * this->radiusY * this->radiusY * x) - (2 * this->radiusX * this->radiusX *y) - (this->radiusX * this->radiusX);
+    }
+  }	
 }
