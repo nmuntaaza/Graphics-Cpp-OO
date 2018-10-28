@@ -315,3 +315,11 @@ void Triangle::dilatation(int a, int b, float scale)
 	this->point2.dilatation(a, b, scale);
 	this->point3.dilatation(a, b, scale);
 }
+
+Point Triangle::origin()
+{
+	Point origin;
+	
+	origin.x = (this->point1.x + this->point2.x + this->point3.x);
+	origin.y = (this->point1.y + this->point2.y + this->point3.y);
+}

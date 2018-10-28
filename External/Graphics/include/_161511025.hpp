@@ -6,6 +6,7 @@
 //												Notes
 // ---------------------------------------------------------
 // * This library forked from winbgim library for education purpose only
+// * Do not remove this comment and notes!!
 // * Thanks
 // ---------------------------------------------------------
 
@@ -106,6 +107,7 @@ class Triangle
 		void reflection(float gradien = 1.0, float c = 0);
 		void rotation(int a = 0, int b = 0, int angle = 0);
 		void dilatation(int a = 0, int b = 0, float scale = 0.5);
+		Point origin();
 };
 
 #endif
